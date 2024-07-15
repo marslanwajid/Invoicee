@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script
+      src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js"
+      defer
+      init
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="bg-zinc-100 p-6 rounded-lg shadow-md max-w-4xl mx-auto">
+      <div class="grid grid-cols-2 gap-4 mb-4">
+        <div>
+          <img
+            src="https://placehold.co/150x50?text=Logo"
+            alt="Company Logo"
+            class="mb-4"
+          />
+          <p class="text-sm">City Cargo Services Ltd</p>
+        </div>
+        <div class="text-right">
+          <p class="text-sm">Office: 01484 506 455</p>
+          <p class="text-sm">07462 003 933</p>
+          <p class="text-sm">07455 588 888</p>
+          <p class="text-sm">
+            <a
+              href="http://www.internationalcitycargo.com"
+              class="text-blue-500"
+              >www.internationalcitycargo.com</a
+            >
+          </p>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-4 border-t border-b py-4 mb-4">
+        <div>
+          <p class="font-bold">SENDER ADDRESS</p>
+          <div class="mb-2">
+            <label class="block text-sm font-medium">Name:</label>
+            <input type="text" class="w-full border rounded p-2" value="" />
+          </div>
+          <div class="mb-2">
+            <label class="block text-sm font-medium">Address:</label>
+            <input type="text" class="w-full border rounded p-2" />
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium">City:</label>
+              <input type="text" class="w-full border rounded p-2" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium">Postcode:</label>
+              <input type="text" class="w-full border rounded p-2" />
+            </div>
+          </div>
+        </div>
+        <div>
+          <p class="font-bold">RECEIVER ADDRESS</p>
+          <div class="mb-2">
+            <label class="block text-sm font-medium">Name:</label>
+            <input type="text" class="w-full border rounded p-2" />
+          </div>
+          <div class="mb-2">
+            <label class="block text-sm font-medium">Address:</label>
+            <input type="text" class="w-full border rounded p-2" />
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium">City:</label>
+              <input type="text" class="w-full border rounded p-2" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium">Postcode:</label>
+              <input type="text" class="w-full border rounded p-2" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 mb-4">
+        <div>
+          <label class="block text-sm font-medium">Tel:</label>
+          <input type="text" class="w-full border rounded p-2" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium">Tel:</label>
+          <input type="text" class="w-full border rounded p-2" />
+        </div>
+      </div>
+      <div class="grid grid-cols-3 gap-4 mb-4">
+        <div>
+          <label class="block text-sm font-medium"
+            >Delivery Requirements:</label
+          >
+          <div class="flex items-center">
+            <input type="checkbox" class="mr-2" /> Door to Door by Air
+          </div>
+          <div class="flex items-center">
+            <input type="checkbox" class="mr-2" /> Door to Door by Sea
+          </div>
+          <div class="flex items-center">
+            <input type="checkbox" class="mr-2" /> Door to City
+          </div>
+        </div>
+        <div>
+          <label class="block text-sm font-medium">Weight:</label>
+          <input type="text" class="w-full border rounded p-2" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium">Gross Weight Kgs:</label>
+          <input type="text" class="w-full border rounded p-2" />
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-4 mb-4">
+        <div>
+          <label class="block text-sm font-medium">Rate Per KG:</label>
+          <input type="text" class="w-full border rounded p-2" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium">Packing:</label>
+          <input type="text" class="w-full border rounded p-2" />
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-4 mb-4">
+        <div>
+          <label class="block text-sm font-medium">Collection Charges:</label>
+          <input type="text" class="w-full border rounded p-2" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium">Customs Duty:</label>
+          <input type="text" class="w-full border rounded p-2" />
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-4 mb-4">
+        <div>
+          <label class="block text-sm font-medium">Total Charges:</label>
+          <input type="text" class="w-full border rounded p-2" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium">Value of Goods:</label>
+          <input type="text" class="w-full border rounded p-2" />
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-4 mb-4">
+        <div>
+          <label class="block text-sm font-medium">Insurance:</label>
+          <input type="text" class="w-full border rounded p-2" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium"
+            >Delivery Agent at Destination:</label
+          >
+          <input type="text" class="w-full border rounded p-2" />
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-sm font-medium">Description of Goods:</label>
+        <input type="text" class="w-full border rounded p-2" />
+      </div>
+      <div class="mb-4">
+        <p class="font-bold">Customer Declaration:</p>
+        <p class="text-sm" id="textsmm">
+          I/We Hereby authorize ICC International Cargo Service to complete all
+          necessary export formalities on our behalf subject to their standard
+          terms and conditions. Also undertake that there is no contraband items
+          (drugs, batteries, perfumes, aerosols, corrosives, firearms, radio
+          active materials, pressurized cylinders, printer cartridges, etc.)
+          packaged in the consignment.
+        </p>
+      </div>
+      <div class="mb-4">
+        <p class="font-bold">Terms and Conditions:</p>
+        <ol class="text-sm list-decimal list-inside">
+          <li>We will not be responsible for any damaged or lost goods.</li>
+          <li>
+            The parcel may be disposed of if any durable items are packed
+            without our permission.
+          </li>
+          <li>
+            If parcel is not received at destination and no enquiry is made
+            within 12 weeks, we will dispose of the parcel without any notice.
+          </li>
+          <li>
+            The door delivery parcels by ship are normally delivered within 6-8
+            weeks, however it could take longer delivery time due to unforeseen
+            circumstances, or poor weather conditions.
+          </li>
+          <li>
+            Before signing the delivery receipt, please check your weight and
+            contents, Once the delivery receipt signed, without any claim ICC
+            International Cargo Services will not be held responsible for any
+            shortages of goods packed in your cargo.
+          </li>
+          <li>
+            The company will not accept any claims for fragile items if not
+            packed properly.
+          </li>
+        </ol>
+      </div>
+      <div class="grid grid-cols-2 gap-4 mb-4">
+        <div>
+          <label class="block text-sm font-medium">Customer Signature:</label>
+          <input type="text" class="w-full border rounded p-2" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium">Signature:</label>
+          <input type="text" class="w-full border rounded p-2" />
+        </div>
+      </div>
+      <div>
+        <label class="block text-sm font-medium">Parcel No.:</label>
+        <input type="text" class="w-full border rounded p-2" />
+      </div>
+      <div class="text-right mt-4">
+        <button
+          id="printButton"
+          onclick="printInvoice()"
+          data-html2canvas-ignore="true"
+          class="bg-blue-500 text-white px-4 py-2 rounded"
+        >
+          Print Invoice
+        </button>
+        <button
+          id="printButton"
+          onclick="downloadPDF()"
+          data-html2canvas-ignore="true"
+          class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded ml-2"
+        >
+          Download PDF
+        </button>
+
+        <!-- Add these buttons in your HTML -->
+        <button
+          onclick="shareWhatsApp()"
+          data-html2canvas-ignore="true"
+          class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded ml-2"
+        >
+          <i class="fa fa-whatsapp"></i>
+        </button>
+        <button
+          onclick="shareEmail()"
+          data-html2canvas-ignore="true"
+          class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded ml-2"
+        >
+          <i class="fa fa-envelope"></i>
+        </button>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      function printInvoice() {
+        const printButton = document.getElementById("printButton");
+        printButton.disabled = true;
+        window.print();
+      }
+
+      function downloadPDF() {
+        const element = document.querySelector(".bg-zinc-100");
+        html2pdf()
+          .from(element)
+          .set({
+            margin: 1,
+            filename: "invoice.pdf",
+            html2canvas: { scale: 2 },
+            jsPDF: { format: "b4", orientation: "portrait" },
+          })
+          .save();
+      }
+
+      function shareWhatsApp() {
+        // Customize the message to include relevant invoice details
+        let message = encodeURIComponent(
+          "Check out my invoice details: [Add your invoice link or details here]"
+        );
+        window.open(`https://wa.me/send?text=${message}`);
+      }
+
+      function shareEmail() {
+        // Customize subject and body of the email
+        let subject = encodeURIComponent("Invoice Details");
+        let body = encodeURIComponent(
+          "Please find attached the invoice details."
+        );
+
+        window.location.href = `mailto:?subject=${subject}&body=${body}`;
+      }
+    </script>
+  </body>
+</html>

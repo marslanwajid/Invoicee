@@ -1,0 +1,23 @@
+@media print {
+  body * {
+    font-size: 10px;
+    line-height: 1.2em;
+  }
+  .print-container,
+  .print-container * {
+    visibility: visible;
+  }
+  .print-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  #printButton {
+    display: none;
+    visibility: hidden;
+  }
+  #textsmm {
+    font-size: 10px;
+    line-height: 1.2em;
+  }
+}/*# sourceMappingURL=style.css.map */
